@@ -1,0 +1,17 @@
+.root-app-container {
+    display: block;
+    box-sizing: border-box;
+    width: auto;
+    margin: 0.125rem;
+    padding: 0.125rem;
+}
+
+.header {
+    margin: 0.25em;
+    padding: 0.25em;
+}
+
+.footer {
+    margin: 0.25em;
+    padding: 0.25em;
+}
