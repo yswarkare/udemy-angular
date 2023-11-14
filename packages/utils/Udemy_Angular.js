@@ -1,5 +1,6 @@
 import { Section, calcProgress } from './CourseCalc.js';
 
+
 const arrList = {
 	1: new Section(1, '00:40:00', 'Getting Started'),
 	2: new Section(2, '01:55:00', 'The Basics'),
@@ -37,6 +38,6 @@ const arrList = {
 	34: new Section(34, '01:01:00', 'TypeScript Introduction'),
 };
 
-const progress = calcProgress(arrList, 2, 4);
-console.info('Udemy Node.js');
+const progress = calcProgress(arrList, 2, 5);
+console.info('Udemy Angular');
 console.table(progress);

@@ -38,11 +38,6 @@ const arrList = {
 };
 
 const success = { 1: '\u2705', 2: '\u2611' };
-const error = { 1: '\u274C', 2: '\u2612' };
-const noEntry = { 1: '\u26D4' };
-const pentagram = {1: '\u26E4'}
-const squareFourCorners = { 1: '\u26F6'}
-const hourglass = { 1: "\u231B" }
+console.info(success[2], 'Udemy Angular');
 const progress = calcProgress(arrList, 2, 4);
-console.info(success[2], 'Udemy Node.js', error[2], noEntry[1], '&#004451;');
 console.table(progress);
