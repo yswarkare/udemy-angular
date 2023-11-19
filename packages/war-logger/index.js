@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class Logger {
-    constructor() { }
+    constructor() {
+        this.logger = '';
+    }
     default(msg, color) {
         let css = '';
         let paint = {

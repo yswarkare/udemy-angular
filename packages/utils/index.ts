@@ -1,6 +1,6 @@
 import Logger from 'war-logger';
 
-const logger = new Logger()
+const logger = new Logger();
 
 console.log({ logger });
 // logger.error("function")

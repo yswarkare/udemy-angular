@@ -1,6 +1,5 @@
 import { Section, calcProgress } from './CourseCalc.js';
 
-
 const arrList = {
 	1: new Section(1, '00:40:00', 'Getting Started'),
 	2: new Section(2, '01:55:00', 'The Basics'),

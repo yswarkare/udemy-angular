@@ -13,6 +13,7 @@ type LogType = {
 };
 
 interface LoggerInf {
+	logger: string;
 	default: Function;
 	log: Function;
 	error: Function;
@@ -22,7 +23,10 @@ interface LoggerInf {
 }
 
 class Logger implements LoggerInf {
-	constructor() {}
+	logger: string;
+	constructor() {
+		this.logger = '';
+	}
 	default(msg: string, color: string) {
 		let css = '';
 		let paint: Log = {
