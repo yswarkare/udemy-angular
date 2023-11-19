@@ -1,9 +1,9 @@
 packages:
   #| all direct packages
-  - "Course_Project"
   - "Getting_Started/first-app"
   #| all packages in direct subdirs of packages/
   - "Course_Assignments/*"
+  - "Course_Project/*"
   - 'packages/*'
   #| all packages in subdirs of components/
   #* - 'components/**'
