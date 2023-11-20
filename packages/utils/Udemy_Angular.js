@@ -37,6 +37,6 @@ const arrList = {
 	34: new Section(34, '01:01:00', 'TypeScript Introduction'),
 };
 
-const progress = calcProgress(arrList, 2, 5);
+const progress = calcProgress(arrList, 3, 5);
 console.info('Udemy Angular');
 console.table(progress);
