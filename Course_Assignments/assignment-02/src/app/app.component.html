@@ -1,0 +1,55 @@
+<div class="full-page bg-secondary">
+  <div class="container my-4 text-dark">
+    <div class="px-5 py-3 bg-body-secondary">
+      <ol class="col">
+        <li>
+          Add a Input field which updates a property ('username') via
+          Two-Way-Binding
+        </li>
+        <li>
+          Output the username property via String Interpolation (in a paragraph
+          below the input)
+        </li>
+        <li>
+          Add a button which may only be clicked if the username is NOT an empty
+          string
+        </li>
+        <li>
+          Upon clicking the button, the username should be reset to an empty
+          string
+        </li>
+      </ol>
+    </div>
+    <hr />
+    <br />
+    <div class="row g-3 px-5 py-3 bg-body-secondary">
+      <div class="row row-cols-auto g-2">
+        <div class="col-4">
+          <label for="exampleFormControlInput1" class="col form-label"
+            >Username</label
+          >
+          <input
+            type="email"
+            class="col-4 form-control"
+            id="exampleFormControlInput1"
+            placeholder="name@example.com"
+            [(ngModel)]="username"
+          />
+        </div>
+      </div>
+      <div class="col-12">
+        <span class="fs-5">{{ username || "no input" }}</span>
+      </div>
+      <div class="col-4">
+        <button
+          type="button"
+          class="row btn btn-primary"
+          [disabled]="!username"
+          (click)="resetUsername()"
+        >
+          Primary
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
