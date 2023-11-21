@@ -15,9 +15,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-// Create Server
-const server;
-
 const createServer = async () => {
     try {
         server = http.createServer(app, (req, res) => {
