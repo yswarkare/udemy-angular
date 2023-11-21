@@ -1,4 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
+.full-page {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #bbb999;
+}
+
+.min-w-max {
+  min-width: max-content;
 }
