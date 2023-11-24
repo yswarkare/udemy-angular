@@ -1,3 +1,65 @@
-<div class="full-page">
-  <p>App Component</p>
+<div class="full-page px-5 py-4">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Bind it!</h3>
+      <ol class="list-group list-group-numbered px-5">
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          Create three new components: GameControl, Odd and Even
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          The GameControl Component should have buttons to start and stop the
+          game
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          When starting the game, an event (holding a incrementing number)
+          should get emitted each second (ref = setInterval())
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          The event should be listenable from outside the component
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          When stopping the game, no more events should get emitted
+          (clearInterval(ref))
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          A new Odd component should get created for every odd number emitted,
+          the same should happen for the Even Component (on even numbers)
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          Simply output Odd - NUMBER or Even - NUMBER in the two components
+        </li>
+        <li class="list-group-item list-group-item-dark list-group-item-action">
+          Style the element (e.g. paragraph) holding your output text
+          differently in both components
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <br />
+  <hr class="line" />
+  <hr class="line" />
+  <br />
+
+  <div class="d-flex flex-row">
+    <app-game-control
+      (counterEmitter)="setGameCounter($event)"
+      (resetCounter)="resetNumbers()"
+    ></app-game-control>
+  </div>
+  <hr class="line" />
+  <div class="d-flex flex-column">
+    <div class="d-flex flex-row flex-wrap">
+      <app-odd
+        *ngFor="let oddNumber of oddNumbers"
+        [number]="oddNumber"
+      ></app-odd>
+    </div>
+    <div class="d-flex flex-row flex-wrap">
+      <app-even
+        *ngFor="let evenNumber of evenNumbers"
+        [number]="evenNumber"
+      ></app-even>
+    </div>
+  </div>
 </div>

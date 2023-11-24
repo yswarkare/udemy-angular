@@ -15,3 +15,42 @@ body {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+hr.line {
+  border: none;
+  height: 2px;
+  /* Set the hr color */
+  color: #f0f8ff; /* old IE */
+  background-color: #f0f8ff; /* Modern Browsers */
+}
+
+.gap {
+  display: flex;
+}
+.gap.g-1 {
+  gap: 0.125 rem;
+}
+
+.gap.g-2 {
+  gap: 0.25 rem;
+}
+
+.gap.g-3 {
+  gap: 0.375 rem;
+}
+
+.gap.g-4 {
+  gap: 0.5 rem;
+}
+
+.oddClass {
+  background-color: yellowgreen;
+  margin: 0.125rem;
+  padding: 0.125rem 0.5rem;
+}
+
+.evenClass {
+  background-color: darkcyan;
+  margin: 0.125rem;
+  padding: 0.125rem 0.5rem;
+}
