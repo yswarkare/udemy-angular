@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: "JetBrains Mono", "Courier New", Courier, monospace;
+  font-size: 16px;
+}
+
+body {
+  background-color: #292929;
+}
+
+.full-page {
+  color: #ddd;
+  background-color: #292929;
+  min-width: 100vw;
+  min-height: 100vh;
+}
