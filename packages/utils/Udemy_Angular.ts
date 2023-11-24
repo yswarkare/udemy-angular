@@ -39,5 +39,5 @@ const arrList = {
 
 const success = { 1: '\u2705', 2: '\u2611' };
 console.info(success[2], 'Udemy Angular');
-const progress = calcProgress(arrList, 3, 5);
+const progress = calcProgress(arrList, 7, 13);
 console.table(progress);
