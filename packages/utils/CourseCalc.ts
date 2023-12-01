@@ -2,7 +2,7 @@ export class Section {
 	id: number;
 	length: string;
 	name: string | null;
-	constructor(id: number, length: string, name: string) {
+	constructor(id: number, length: string, name: string | null) {
 		this.id = id;
 		this.length = length;
 		this.name = name || null;
@@ -13,7 +13,7 @@ class Time {
 	hrs: number;
 	mins: number;
 	secs: number;
-	constructor(hrs = 0, mins = 0, secs = 0) {
+	constructor(hrs: number = 0, mins: number = 0, secs: number = 0) {
 		this.hrs = hrs;
 		this.mins = mins;
 		this.secs = secs;
@@ -63,7 +63,7 @@ class Progress {
 	completed: Time;
 	current: Time;
 	remaining: Time;
-	constructor(comp = new Time(), curr = new Time(), rem = new Time()) {
+	constructor(comp: Time = new Time(), curr: Time = new Time(), rem: Time = new Time()) {
 		this.completed = comp;
 		this.current = curr;
 		this.remaining = rem;
