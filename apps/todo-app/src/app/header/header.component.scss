@@ -1,0 +1,15 @@
+#header-items {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+
+  li {
+    display: flex;
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+  }
+}
