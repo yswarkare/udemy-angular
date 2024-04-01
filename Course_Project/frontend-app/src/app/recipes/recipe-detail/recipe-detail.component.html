@@ -5,25 +5,30 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1>{{ recipe.name }}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group">
-      <button class="btn btn-primary dropdown-toggle">
+    <div class="btn-group" appDropdown>
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        data-bs-auto-close="true"
+      >
         Manage Recipe
         <span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li class="list-group-item">
-          <a href="#" class="link">To Shopping List</a>
+      <ul class="dropdown-menu bg-indigo-200">
+        <li>
+          <a href="#" class="dropdown-item">To Shopping List</a>
         </li>
-        <li class="list-group-item">
-          <a href="#" class="link">Edit Recipe</a>
+        <li>
+          <a href="#" class="dropdown-item">Edit Recipe</a>
         </li>
-        <li class="list-group-item">
-          <a href="#" class="link">Delete Recipe</a>
+        <li>
+          <a href="#" class="dropdown-item">Delete Recipe</a>
         </li>
       </ul>
     </div>
@@ -31,7 +36,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h3>Description</h3>
+    <h3>{{ recipe.description }}</h3>
   </div>
 </div>
 <div class="row">
