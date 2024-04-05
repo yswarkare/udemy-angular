@@ -25,33 +25,41 @@
           <li
             class="nav-item px-4 list-group-item-primary list-group-item-action"
           >
-            <a class="nav-link" href="#" (click)="onSelect('recipes')">Recipes</a>
+            <a class="nav-link" routerLink="/recipes" routerLinkActive="active"
+              >Recipes</a
+            >
           </li>
           <li
             class="nav-item px-4 list-group-item-primary list-group-item-action"
           >
-            <a class="nav-link min-w-max" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+            <a
+              class="nav-link min-w-max"
+              routerLink="/shopping-list"
+              routerLinkActive="active"
+              >Shopping List</a
+            >
           </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link px-4 dropdown-toggle fs-5 list-group-item-primary list-group-item-action"
-              href="#"
+              style="cursor: pointer"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-            ></a>
+              >Manage</a
+            >
             <ul class="dropdown-menu bg-body-secondary p-0">
               <li>
                 <a
                   class="px-3 py-2 dropdown-item list-group-item list-group-item-danger list-group-item list-group-item-action"
-                  href="#"
+                  style="cursor: pointer"
                   >save data</a
                 >
               </li>
               <li>
                 <a
                   class="px-3 py-2 dropdown-item list-group-item list-group-item-danger list-group-item list-group-item-action"
-                  href="#"
+                  style="cursor: pointer"
                   >fetch data</a
                 >
               </li>
