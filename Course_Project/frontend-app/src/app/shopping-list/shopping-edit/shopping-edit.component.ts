@@ -11,6 +11,7 @@ export class ShoppingEditComponent {
   @ViewChild('nameInput') nameInput: ElementRef;
   @ViewChild('amountInput') amountInput: ElementRef;
 
+
   constructor(private shoppingListService: ShoppingListService) {}
 
   onAddItem() {
