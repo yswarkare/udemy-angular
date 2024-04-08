@@ -2,7 +2,7 @@ packages:
   #| all direct packages
   # - "Getting_Started/first-app"
   #| all packages in direct subdirs of packages/
-  # - "Course_Assignments/*"
+  - "Course_Assignments/*"
   - "Course_Project/*"
   - "course-practice/*"
   # - 'packages/*'
