@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <!-- Add a Form with the following Inputs (and Validators)
@@ -13,6 +13,53 @@
            Upon submitting the form, you should simply print the Value of the Form to the Console.
            Optionally, display it in your template.
       -->
+    </div>
+  </div>
+  <div class="row">
+    <form class="col-7 row" (ngSubmit)="onSubmit()" #signupForm="ngForm">
+      <div class="mb-3 row gap-2">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-9">
+          <input type="email" class="form-control" name="email" id="staticEmail" ngModel required #email="ngModel">
+        </div>
+        <div class="col-sm-10" *ngIf="!email.valid && email.touched">
+          <span>Please enter a valid email!</span>
+        </div>
+      </div>
+      <div class="mb-3 row gap-2">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-9">
+          <input type="password" name="password" class="form-control" id="inputPassword" ngModel required
+            #pass="ngModel">
+        </div>
+        <div class="col-sm-10" *ngIf="!pass.valid && pass.touched">
+          <span>Please enter a valid password!</span>
+        </div>
+      </div>
+      <div class="mb-3 row gap-2">
+        <label for="subscriptions" class="col-sm-2 col-form-label">Subscription</label>
+        <div class="col-sm-9">
+          <select class="form-select" id="subscriptions" name="subscription" aria-label="Multiple select example"
+            ngModel required #subs="ngModel">
+            <option value="basic">Basic</option>
+            <option value="advanced">Advanced</option>
+            <option value="pro">Pro</option>
+          </select>
+        </div>
+        <div class="col-sm-10" *ngIf="!subs.valid && subs.touched">
+          <span>Please select a subscription!</span>
+        </div>
+      </div>
+      <div class="mb-3 row gap-2 justify-content-center">
+        <div class="col-auto">
+          <button class="btn btn-primary" type="submit" [disabled]="!signupForm.valid">Submit</button>
+        </div>
+      </div>
+    </form>
+    <div class="row" *ngIf="formSubmitted">
+      <p>Email: {{ userData.email }}</p>
+      <p>Password: {{ userData.password }}</p>
+      <p>Subscription: {{ userData.subscription }}</p>
     </div>
   </div>
 </div>
