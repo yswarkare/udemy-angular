@@ -11,6 +11,8 @@ export class AppComponent {
 
   @ViewChild('signupForm') signupForm!: NgForm;
 
+  selectedSubscription = 'advanced'
+
   userData = {
     email: '',
     password: '',

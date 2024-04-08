@@ -40,7 +40,7 @@
         <label for="subscriptions" class="col-sm-2 col-form-label">Subscription</label>
         <div class="col-sm-9">
           <select class="form-select" id="subscriptions" name="subscription" aria-label="Multiple select example"
-            ngModel required #subs="ngModel">
+            [ngModel]="selectedSubscription" required #subs="ngModel" value="">
             <option value="basic">Basic</option>
             <option value="advanced">Advanced</option>
             <option value="pro">Pro</option>
