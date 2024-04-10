@@ -1,4 +1,4 @@
-import { Section, calcProgress } from './CourseCalc.js';
+import { Section, calcProgress } from './CourseCalc.modules.js';
 
 const arrList = {
 	1: new Section(1, '00:40:00', 'Getting Started'),
