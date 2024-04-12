@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
-  AsyncValidatorFn,
   FormArray,
-  FormBuilder,
   FormControl,
   FormGroup,
   ValidationErrors,
@@ -21,6 +19,7 @@ export class AppComponent implements OnInit {
   genders = ['male', 'female'];
   signupForm: FormGroup = new FormGroup({});
   forbiddenUsernames = ['chris', 'anna'];
+  forbiddenEmailIds = ['test@test.com'];
 
   initialValue = new FormGroup({
     userData: new FormGroup({
@@ -28,10 +27,11 @@ export class AppComponent implements OnInit {
         Validators.required,
         this.forbiddenNames.bind(this),
       ]),
-      email: new FormControl(
-        '',
-        [Validators.required, Validators.email],
-      ),
+      email: new FormControl('', {
+        validators: [Validators.required, Validators.email],
+        asyncValidators: [this.forbiddenEmails.bind(this)],
+        updateOn: 'blur',
+      }),
     }),
     gender: new FormControl('male'),
     hobbies: new FormArray([]),
@@ -71,28 +71,19 @@ export class AppComponent implements OnInit {
     return null;
   }
 
-  forbiddenEmails (nameRe: RegExp): AsyncValidatorFn {
-    return (
-      control: AbstractControl
-    ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
-
-      async function emailValidation(
-        nameRe: RegExp,
-        control: AbstractControl
-      ): Promise<ValidationErrors | null> {
-        const promise = new Promise<ValidationErrors | null>(
-          (resolve, reject) => {
-            setTimeout(() => {
-              if (nameRe.test(control.value)) {
-                resolve({ emailIsForbidden: true });
-              }
-            }, 1500);
-          }
-        );
-        return promise;
-      }
-
-      return emailValidation(nameRe, control);
-    };
+  forbiddenEmails(
+    control: AbstractControl
+  ): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
+    const promise = new Promise<ValidationErrors | null>((resolve, reject) => {
+      setTimeout(() => {
+        if (
+          control.value?.toLowerCase() &&
+          this.forbiddenEmailIds.indexOf(control.value.toLowerCase()) !== -1
+        ) {
+          resolve({ nameIsForbidden: true });
+        }
+      }, 1500);
+    });
+    return promise;
   }
 }
