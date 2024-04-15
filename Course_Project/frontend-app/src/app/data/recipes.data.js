@@ -52,6 +52,15 @@ const recipes = [
       new Ingredient("Coriander", "2"),
     ]
   ),
+  new Recipe('Veg Burger', 'Veggie burgers have become a popular healthy alternative to meat based burgers. These days, grocery stores and restaurants are offering many options, that try to mimic a meat texture, to custom made black bean and veggie patties and more. This Burger Recipe covers everything needed to make delightful veggie burgers from scratch, including how to prepare and pan fry delicious homemade vegetable patties. And because no veggie burger is complete without its own special sauce, I have included instruction on how to make the perfect tangy, sweet and spicy mayonnaise dressing.', 'https://www.thecookierookie.com/wp-content/uploads/2023/04/stovetop-burgers-recipe-2-768x960.jpg', [
+    new Ingredient('Buns', '2'),
+    new Ingredient('Cheese', '2'),
+    new Ingredient('Potatoes', '2'),
+    new Ingredient('Tomatoes', '1'),
+    new Ingredient("Onions", "1"),
+      new Ingredient("Coriander", "2"),
+
+  ])
 ];
 
 export default recipes;
