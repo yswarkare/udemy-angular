@@ -1,20 +1,35 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <input type="text" [(ngModel)]="filteredStatus">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 row g-2">
+      <div class="col-auto">
+        <input class="form-control" type="text" [(ngModel)]="filteredStatus" title="filteredStatus">
+        <br>
+        <button class="btn btn-primary" (click)="onAddServer()" type="button">Add Server</button>
+      </div>
       <br>
-      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
-      <br><br>
+      <div class="col-12 row">
+        <div class="col-6 d-flex">
+          <label for="orderBy" class="form-label">Order</label>
+          <select [(ngModel)]="orderBy" id="orderBy" title="orderBy" class="form-select">
+            <option value="ASCE">Ascending</option>
+            <option value="DESC">Descending</option>
+          </select>
+        </div>
+        <div class="col-6 d-flex">
+          <label for="propName" class="form-label">Property</label>
+          <select [(ngModel)]="propName" id="propName" title="propName" class="form-select">
+            <option *ngFor="let prop of props; let i = index" [value]="prop">{{ prop }}</option>
+          </select>
+        </div>
+      </div>
+      <br>
       <h2>App Status: {{ appStatus | async}}</h2>
       <hr>
       <ul class="list-group">
-        <li
-          class="list-group-item"
-          *ngFor="let server of servers"
+        <li class="list-group-item" *ngFor="let server of servers | sort:orderBy:propName"
           [ngClass]="getStatusClasses(server)">
-          <span
-            class="badge">
-            {{ server.status }}
+          <span class="badge text-bg-dark">
+            {{ server.status | reverse }}
           </span>
           <strong>{{ server.name }}</strong> |
           {{ server.instanceType | uppercase }} |
