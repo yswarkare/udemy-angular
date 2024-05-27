@@ -21,10 +21,12 @@
         </div>
       </div>
       <div class="col-auto" *ngIf="error">
-        <div class="alert alert-danger" role="alert">
+        <!-- <div class="alert alert-danger" role="alert">
           {{error}}
-        </div>
+        </div> -->
+        <!-- <app-alert [message]="error" (close)="onHandleError()"></app-alert> -->
       </div>
+      <ng-template appPlaceholder></ng-template>
     </form>
   </div>
 </div>

@@ -1,6 +1,7 @@
 packages:
   #| all direct packages
   # - "Getting_Started/first-app"
+  # - "apps/articles-app"
   #| all packages in direct subdirs of packages/
   # - "Course_Assignments/*"
   - "Course_Project/*"

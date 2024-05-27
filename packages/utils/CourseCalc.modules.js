@@ -66,7 +66,7 @@ export const calcProgress = (sections, start, end) => {
 		console.log('start is greater than end');
 		return null;
 	}
-	if (start < 0 || start > 36 || end < 1 || end > 36) {
+	if (start < 0 || start > 38 || end < 1 || end > 38) {
 		console.log('enter valid start and end points');
 		return null;
 	}

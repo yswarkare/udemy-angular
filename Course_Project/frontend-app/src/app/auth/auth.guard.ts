@@ -19,9 +19,11 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): MaybeAsync<boolean | UrlTree> {
+    console.log(this.authService.user)
     return this.authService.user.pipe(
       take(1),
       map((user) => {
+        console.log(user);
         const isAuth = !!user;
         if (isAuth) {
           return true;

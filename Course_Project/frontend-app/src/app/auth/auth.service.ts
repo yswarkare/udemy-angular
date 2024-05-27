@@ -4,6 +4,7 @@ import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from './user.model';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 export interface AuthResponseData {
   kind: string;
@@ -19,10 +20,9 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
-  private apiKey = 'AIzaSyDtZFPC8xJtoj6_0DknNok2qwEuEh08xi8';
   private fbApi = 'https://identitytoolkit.googleapis.com/v1';
-  private signUpApi = `${this.fbApi}/accounts:signUp?key=${this.apiKey}`;
-  private signInApi = `${this.fbApi}/accounts:signInWithPassword?key=${this.apiKey}`;
+  private signUpApi = `${this.fbApi}/accounts:signUp?key=${environment.firebaseApiKey}`;
+  private signInApi = `${this.fbApi}/accounts:signInWithPassword?key=${environment.firebaseApiKey}`;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -124,6 +124,7 @@ export class AuthService {
     const expiresInNum = +expiresIn * 1000;
     const expirationDate = new Date(new Date().getTime() + expiresInNum);
     const user = new User(email, localId, idToken, expirationDate);
+    console.log({ user });
     this.user.next(user);
 
     this.autoLogout(expiresInNum);
@@ -151,6 +152,8 @@ export class AuthService {
         default:
           break;
       }
+    } else {
+      console.log(errorRes);
     }
     return throwError(errorMessage);
   }
